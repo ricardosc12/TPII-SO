@@ -281,7 +281,7 @@ char* executaInstrucao(Gerenciador_de_Processos *gerenciador,int pid){
     else if (strcmp(options[0],"R") == 0) {
         // write(pid, "Clone Sub !", 64);
         int size;
-        strcat(options[1],".txt");
+        strcat(options[1],".bin");
         char** instrucoes = get_Instrucoes(&size,options[1]);
         cpu->programa.instrucoes = instrucoes;
         cpu->PC = 0;
@@ -414,7 +414,7 @@ void Gerenciador(int pid_p){
         if(strcmp(inbuf,"init") == 0){
             Dados dado;
             int size;
-            dado.instrucoes = get_Instrucoes(&size,"init.txt");
+            dado.instrucoes = get_Instrucoes(&size,"init.bin");
             Processo processo = criaProcesso(0,0,dado,0,0,0,0);
             int give_pid = gerenciador.adiciona(&gerenciador,processo);
             gerenciador.EstadoPronto.push(&gerenciador.EstadoPronto,give_pid);
