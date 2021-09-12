@@ -1,0 +1,14 @@
+N 2
+D 0
+D 1
+V 0 100
+V 1 200
+F 1
+R init2
+F 1
+R init2
+F 1
+R init2
+F 1
+R init2
+T
